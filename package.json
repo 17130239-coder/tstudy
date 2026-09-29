@@ -1,0 +1,19 @@
+{
+  "name": "tstudy-clone",
+  "version": "1.0.0",
+  "description": "Full clone of T-Study (ThinhNH39 Learning Hub) with interactive quiz engine and question datasets",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "tstudy",
+    "quiz",
+    "claude",
+    "azure",
+    "certification"
+  ],
+  "author": "",
+  "license": "ISC"
+}

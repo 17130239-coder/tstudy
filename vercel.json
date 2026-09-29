@@ -1,61 +1,43 @@
 {
+  "framework": null,
+  "buildCommand": "node build.js",
+  "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "header",
-          "key": "rsc",
-          "value": "1"
-        }
-      ],
-      "destination": "/index.rsc"
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "query",
-          "key": "_rsc"
-        }
-      ],
-      "destination": "/index.rsc"
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "header",
-          "key": "rsc",
-          "value": "1"
-        }
-      ],
-      "destination": "/:path*.rsc"
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "query",
-          "key": "_rsc"
-        }
-      ],
-      "destination": "/:path*.rsc"
-    }
-  ],
   "headers": [
+    {
+      "source": "/_next/static/css/(.*)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/css; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/_next/static/chunks/(.*)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/javascript; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/_next/static/media/(.*)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "font/woff2"
+        }
+      ]
+    },
     {
       "source": "/(.*)\\.rsc",
       "headers": [
         {
           "key": "Content-Type",
           "value": "text/x-component"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
         }
       ]
     }
